@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="icon">
     <title>Allure Industries</title>
-    @stack('style')
     <x-style></x-style>
 
     <!-- End Google Tag Manager -->
@@ -41,7 +40,6 @@
     <!-- welcome modal end -->
     <!-- js -->
     <x-script></x-script>
-    @stack('script')
 </body>
 
 </html>
