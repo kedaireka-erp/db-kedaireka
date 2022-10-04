@@ -7,7 +7,7 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="icon">
-    <title>Allure Industries/title>
+    <title>Allure Industries</title>
     @stack('style')
     <x-style></x-style>
 
