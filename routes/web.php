@@ -14,14 +14,10 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get("/login", [LoginController::class, "index"])->name("login");
 
 Route::post("/login", [LoginController::class, "login"]);
 
-Route::get("/dashboard", function () {
+Route::get("/", function () {
     return view("dashboard");
 })->middleware("auth");
