@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('logistics', function (Blueprint $table) {
             $table->id();
             // 1 fppp bisa punya banyak logistic
-            // $table->foreignId("fppp_id")->constrained("manufactures")->onUpdate("cascade");
+            $table->foreignId("fppp_id")->constrained("fppps")->onUpdate("cascade");
             $table->string('no_logistic')->nullable();
             $table->timestamp('tgl_input')->nullable();
             $table->timestamp('tgl_berangkat')->nullable();
