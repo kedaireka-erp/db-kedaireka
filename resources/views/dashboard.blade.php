@@ -19,5 +19,9 @@
         <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
         <button type="submit"> Finance</button>
     </form>
+    <form action="http://manufacturing.alluresystem.site/login" method="post">
+        <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
+        <button type="submit"> Manufacturing</button>
+    </form>
 </body>
 </html>
