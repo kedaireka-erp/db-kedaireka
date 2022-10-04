@@ -98,7 +98,8 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                     <form action="http://crm.alluresystem.site/login" method="post">
                         <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
-                        <button type="submit" class="card-box height-100-p widget-style3">
+                        <button type="submit">
+                        <div class="card-box height-100-p widget-style3">
                             <div class="d-flex flex-wrap">
                                 <div class="widget-data">
                                     <div class="weight-700 font-24 text-dark">CRM</div>
@@ -109,7 +110,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </button>
+                        </div>
+                    </button>
                         </form>
                     </div>
                 </div>
