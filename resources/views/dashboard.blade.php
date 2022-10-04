@@ -39,10 +39,10 @@
         <div class="row">
             <div class="col-12 mb-20">
                 <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                 <form action="http://sales.alluresystem.site/login" method="post">
                 <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
                 <button type="submit">
-                    <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                         <div class="card-box height-100-p widget-style3">
                             <div class="d-flex flex-wrap">
                                 <div class="widget-data">
@@ -55,13 +55,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </button>
                 </form>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                 <form action="http://purchasing.alluresystem.site/login" method="post">
         <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
         <button type="submit">
-                    <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                         <div class="card-box height-100-p widget-style3">
                             <div class="d-flex flex-wrap">
                                 <div class="widget-data">
@@ -74,13 +74,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
                     </button>
                 </form>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                 <form action="http://finance.alluresystem.site/login" method="post">
         <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
         <button type="submit">
-                    <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                         <div class="card-box height-100-p widget-style3">
                             <div class="d-flex flex-wrap">
                                 <div class="widget-data">
@@ -93,13 +94,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
                     </button>
                 </form>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                 <form action="http://manufacturing.alluresystem.site/login" method="post">
         <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
         <button type="submit">
-                    <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                         <div class="card-box height-100-p widget-style3">
                             <div class="d-flex flex-wrap">
                                 <div class="widget-data">
@@ -112,13 +114,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </button>
                 </form>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                     <form action="http://crm.alluresystem.site/login" method="post">
                         <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
                         <button type="submit">
-                    <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                         <div class="card-box height-100-p widget-style3">
                             <div class="d-flex flex-wrap">
                                 <div class="widget-data">
@@ -131,9 +133,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </button>
                         </form>
+                        </div>
                 </div>
             </div>
         </div>
