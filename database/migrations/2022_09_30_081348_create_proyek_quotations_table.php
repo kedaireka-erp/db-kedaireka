@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('proyek_quotations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("quotation_id")->constarined("quotations");
             $table->integer('id_penginput')->nullable();
             $table->string('kode_aplikator')->nullable();
             $table->string('no_quotation');
