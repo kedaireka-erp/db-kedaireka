@@ -9,7 +9,7 @@
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
-				<a href="/dashboard">
+				<a href="/">
 					<img src="https://allureindustries.com/files/uploads/2016/03/600.png" style="height: 50%;" alt="" />
 				</a>
 			</div>
