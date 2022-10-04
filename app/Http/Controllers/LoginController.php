@@ -32,6 +32,11 @@ class LoginController extends Controller
             "email" => "The provided credentials do not match our records.",
         ]);
 
-        return redirect()->intended("dashboard");
+        return redirect()->intended("/");
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect("/");
     }
 }
