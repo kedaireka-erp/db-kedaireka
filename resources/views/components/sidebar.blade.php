@@ -4,7 +4,7 @@
             <img src="https://allureindustries.com/files/uploads/2016/03/600.png" alt="" class="dark-logo" />
             <img src="https://allureindustries.com/files/uploads/2016/03/600.png" alt="" class="light-logo" />
         </a>
-        <div class="close-sidebar" data-toggle="left-sidebar-close">
+        <div class="close-sidebar">
             <i class="ion-close-round"></i>
         </div>
     </div>

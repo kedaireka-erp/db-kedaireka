@@ -14,7 +14,7 @@
     <!-- End Google Tag Manager -->
 </head>
 
-<body>
+<body class="sidebar-shrink">
     <!-- <div class="pre-loader">
         <div class="pre-loader-box">
             <div class="loader-logo">

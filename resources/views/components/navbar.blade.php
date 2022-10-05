@@ -1,7 +1,12 @@
 <div class="header" style="padding: 0px 15px">
     <div class="header-left">
-        <div class="menu-icon bi bi-list"></div>
-        <div class="search-toggle-icon bi bi-search" data-toggle="header_search"></div>
+        {{-- <div class="menu-icon bi bi-list"></div>
+        <div class="search-toggle-icon bi bi-search"></div> --}}
+        <div class="brand-logo">
+            <a href="/">
+                <img src="https://allureindustries.com/files/uploads/2016/03/600.png" style="height: 50%;" alt="" />
+            </a>
+        </div>
     </div>
     <div class="header-right">
         <div class="user-info-dropdown">
