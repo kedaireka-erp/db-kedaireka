@@ -97,7 +97,7 @@
                                             Sistem CRM
                                         </div>
                                     </div>
-                                    <div class="widget-icon bg-primary">
+                                    <div class="widget-icon" style="background-color: #FF1493;">
                                         <div class="icon">
                                             <i class="bi bi-door-open-fill" aria-hidden="true"></i>
                                         </div>
