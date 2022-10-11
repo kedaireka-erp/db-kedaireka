@@ -106,6 +106,46 @@
                             </button>
                         </form>
                     </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
+                        <form action="https://astral.alluresystem.site/" method="post">
+                            <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
+                            <button type="submit" class="btn card-box height-100-p widget-style3 w-100">
+                                <div class="d-flex flex-wrap">
+                                    <div class="widget-data">
+                                        <div class="weight-700 font-24 text-dark">Quotation</div>
+                                        <div class="font-14 text-secondary weight-500">
+                                            Sistem Quotation
+                                        </div>
+                                    </div>
+                                    <div class="widget-icon" style="background-color: #99B898;">
+                                        <div class="icon">
+                                            <i class="bi bi-clipboard2-check-fill" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
+                        <form action="http://165.22.66.252/" method="post">
+                            <input type="hidden" name="user_id" value="{{base64_encode(auth()->user()->id)}}">
+                            <button type="submit" class="btn card-box height-100-p widget-style3 w-100">
+                                <div class="d-flex flex-wrap">
+                                    <div class="widget-data">
+                                        <div class="weight-700 font-24 text-dark">Warehouse</div>
+                                        <div class="font-14 text-secondary weight-500">
+                                            Sistem Warehouse
+                                        </div>
+                                    </div>
+                                    <div class="widget-icon" style="background-color: #45ADA8;">
+                                        <div class="icon">
+                                            <i class="bi bi-box-seam" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

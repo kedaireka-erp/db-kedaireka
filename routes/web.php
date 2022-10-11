@@ -22,4 +22,8 @@ Route::get("/", function () {
     return view("dashboard");
 })->middleware("auth");
 
+Route::get("/dashboard", function () {
+    return view("dashboard");
+})->middleware("auth");
+
 Route::get("/logout", [LoginController::class, "logout"])->name("logout")->middleware("auth");
