@@ -36,6 +36,8 @@ return new class extends Migration
             $table->boolean("delivery_to_expedition")->nullable();
             $table->text("note")->nullable();
             $table->enum('acc_produksi',['ACCEPT','PENDING'])->default('PENDING');
+            $table->enum('acc_pengiriman',['ACCEPT','PENDING','ACCEPT WITH NOTE'])->default('PENDING');
+            $table->text("note_acc")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
