@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,16 @@ Route::get("/dashboard", function () {
     return view("dashboard");
 })->middleware("auth");
 
-Route::get("/role", [RoleController::class, "index"])->middleware("role:Admin");
+Route::get("/users", [UserController::class, "index"])->middleware("role:Admin");
 
-Route::post("/role/{user}", [RoleController::class, "update"])->middleware("role:Admin");
+Route::post("/users/store", [UserController::class, "store"])->middleware("role:Admin");
+
+Route::post("/user/{user}", [UserController::class, "update"])->middleware("role:Admin");
+
+Route::get("/permissions", [PermissionController::class, "index"])->middleware("role:Admin");
+
+Route::post("/permissions/store", [PermissionController::class, "store"])->middleware("role:Admin");
+
+Route::delete("/permissions/{permission}", [PermissionController::class, "destroy"])->middleware("role:Admin");
 
 Route::get("/logout", [LoginController::class, "logout"])->name("logout")->middleware("auth");
