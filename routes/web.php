@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -25,5 +26,9 @@ Route::get("/", function () {
 Route::get("/dashboard", function () {
     return view("dashboard");
 })->middleware("auth");
+
+Route::get("/role", [RoleController::class, "index"])->middleware("role:Admin");
+
+Route::post("/role/{user}", [RoleController::class, "update"])->middleware("role:Admin");
 
 Route::get("/logout", [LoginController::class, "logout"])->name("logout")->middleware("auth");
