@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="title">
-                            <h4>Dashboard</h4>
+                            <h4>Permissions</h4>
                         </div>
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
@@ -121,12 +121,13 @@
                     nama: $('input[name=nama]').val(),
                 },
                 success: function(data) {
-                    document.getElementById("create_permission").reset();
                     $(".data-table").append(`<tr>
                                         <td>${$('input[name=nama]').val()}</td>
                                         <td><button class="btn btn-danger" onclick="hapusPermission(this)"
                                                     id="${data.permission.id}">Hapus</button></td>
                                     </tr>`);
+                    document.getElementById("create_permission").reset();
+                    $('#bd-example-modal-lg').modal('hide');
                 }
             });
         };
@@ -137,7 +138,7 @@
 
         const hapusPermission = (value) => {
             $.ajax({
-                url: '/permissions/' + value.id,
+                url: '/permission/' + value.id,
                 type: 'DELETE',
                 data: {
                     _token: '{{ csrf_token() }}',

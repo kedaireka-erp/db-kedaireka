@@ -37,6 +37,7 @@ class UserController extends Controller
         ]);
 
         $user->assignRole($request->role);
+
         return response()->json([
             "user" => $user,
             "request" => $request->all(),
@@ -47,6 +48,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->syncRoles($request->roles);
+
         return response()->json([
             "user" => $user,
             "request" => $request->roles,
