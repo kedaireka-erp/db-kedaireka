@@ -199,7 +199,7 @@
                 type: 'POST',
                 data: {
                     _token: "{{ csrf_token() }}",
-                    nama: $("input[name=nama]").val(),
+                    name: $("input[name=nama]").val(),
                     email: $("input[name=email]").val(),
                     password: $("input[name=password]").val(),
                     gender: $("#gender").val(),
