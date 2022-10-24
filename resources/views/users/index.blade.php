@@ -177,6 +177,9 @@
                     _token: "{{ csrf_token() }}",
                     roles: $(this).val(),
                     user_id: $(this).attr("id")
+                },
+                success: function(data) {
+                    window.alert("Role berhasil diubah");
                 }
             });
         });
@@ -205,6 +208,7 @@
                 success: function() {
                     document.getElementById("create_user").reset();
                     $("#bd-example-modal-lg").modal("hide");
+                    window.alert("Berhasil Menambahkan User");
                 }
                 error: function(data) {
                     const errors = data.responseJSON.errors;
