@@ -128,6 +128,7 @@
                                     </tr>`);
                     document.getElementById("create_permission").reset();
                     $('#bd-example-modal-lg').modal('hide');
+                    window.alert("Berhasil membuat permission");
                 }
             });
         };
@@ -146,6 +147,7 @@
                 },
                 success: function() {
                     $(value).parent().parent().remove();
+                    window.alert("permission berhasil dihapus");
                 }
             });
         }
