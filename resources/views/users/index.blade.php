@@ -199,16 +199,14 @@
                 type: 'POST',
                 data: {
                     _token: "{{ csrf_token() }}",
-                    nama: $("input[name=nama]").val(),
+                    name: $("input[name=nama]").val(),
                     email: $("input[name=email]").val(),
                     password: $("input[name=password]").val(),
                     gender: $("#gender").val(),
                     role: $("#role").val()
                 },
                 success: function() {
-                    document.getElementById("create_user").reset();
-                    $("#bd-example-modal-lg").modal("hide");
-                    window.alert("Berhasil Menambahkan User");
+                    window.location.reload();
                 },
                 error: function(data) {
                     const errors = data.responseJSON.errors;

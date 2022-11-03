@@ -121,14 +121,7 @@
                     nama: $('input[name=nama]').val(),
                 },
                 success: function(data) {
-                    $(".data-table").append(`<tr>
-                                        <td>${$('input[name=nama]').val()}</td>
-                                        <td><button class="btn btn-danger" onclick="hapusPermission(this)"
-                                                    id="${data.permission.id}">Hapus</button></td>
-                                    </tr>`);
-                    document.getElementById("create_permission").reset();
-                    $('#bd-example-modal-lg').modal('hide');
-                    window.alert("Berhasil membuat permission");
+                    window.location.reload();
                 }
             });
         };
@@ -146,8 +139,7 @@
                     id: value.id,
                 },
                 success: function() {
-                    $(value).parent().parent().remove();
-                    window.alert("permission berhasil dihapus");
+                    window.location.reload();
                 }
             });
         }

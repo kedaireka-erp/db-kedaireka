@@ -70,9 +70,9 @@
                                                                         <input value="{{ $permission->name }}"
                                                                             name="permissions[]" type="checkbox"
                                                                             class="custom-control-input"
-                                                                            id="customCheck{{ $permission->id }}">
+                                                                            id="permission-{{ $permission->id }}">
                                                                         <label class="custom-control-label"
-                                                                            for="customCheck{{ $permission->id }}">{{ $permission->name }}</label>
+                                                                            for="permission-{{ $permission->id }}">{{ $permission->name }}</label>
                                                                     </div>
                                                                 </div>
                                                             @endforeach
@@ -85,8 +85,13 @@
                                                         Cancel
                                                     </button>
                                                     <button type="reset" class="btn btn-warning">Reset</button>
-                                                    <button type="button" onclick="submitForm()" class="btn btn-primary">
+                                                    <button type="button" onclick="submitForm()"
+                                                        class="btn btn-primary create">
                                                         Create Role
+                                                    </button>
+                                                    <button type="button" onclick="editForm()"
+                                                        class="btn btn-primary update d-none">
+                                                        Edit Role
                                                     </button>
                                                 </div>
                                             </form>
@@ -107,8 +112,12 @@
                                     @foreach ($roles as $role)
                                         <tr>
                                             <td>{{ $role->name }}</td>
-                                            <td><button class="btn btn-danger" onclick="hapusRole(this)"
-                                                    id="{{ $role->id }}">Hapus</button></td>
+                                            <td>
+                                                <button class="btn btn-warning" onclick="editRole(this)"
+                                                    id={{ $role->id }}>Edit</button>
+                                                <button class="btn btn-danger" onclick="hapusRole(this)"
+                                                    id="{{ $role->id }}">Hapus</button>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -129,6 +138,15 @@
     <script src="/vendors/scripts/datatable-setting.js"></script>
     <script src="/src/plugins/datatables/js/vfs_fonts.js"></script>
     <script>
+        const roles = @json($roles);
+        let role = undefined;
+
+        $('#bd-example-modal-lg').on('hidden.bs.modal', function() {
+            $(this).find('form').trigger('reset');
+            $('.create').removeClass('d-none');
+            $('.update').addClass('d-none');
+        });
+
         const submitForm = () => {
             $.ajax({
                 url: '/role/store',
@@ -141,20 +159,39 @@
                     }).get()
                 },
                 success: function(data) {
-                    $(".data-table").append(`<tr>
-                                    <td>${$('input[name=nama]').val()}</td>
-                                    <td><button class="btn btn-danger" onclick="hapusRole(this)"
-                                                id="${data.role.id}">Hapus</button></td>
-                                </tr>`);
-                    document.getElementById("create_role").reset();
-                    $('#bd-example-modal-lg').modal('hide');
+                    window.location.reload();
                 }
             });
         };
 
-        const cancelForm = () => {
-            document.getElementById("create_role").reset();
-        };
+        const editRole = (element) => {
+            role = roles.find(role => role.id == element.id);
+            $('input[name=nama]').val(role.name);
+            role.permissions.forEach(permission => {
+                $(`#permission-${permission.id}`).prop('checked', true);
+            });
+            document.querySelector(".btn.create").classList.add("d-none");
+            document.querySelector(".btn.update").classList.remove("d-none");
+            $('#bd-example-modal-lg').modal('show');
+        }
+
+        const editForm = () => {
+            $.ajax({
+                url: '/role/update',
+                type: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: role.id,
+                    nama: $('input[name=nama]').val(),
+                    permissions: $('input[name="permissions[]"]:checked').map(function() {
+                        return this.value;
+                    }).get()
+                },
+                success: function(data) {
+                    window.location.reload();
+                }
+            });
+        }
 
         const hapusRole = (value) => {
             $.ajax({
@@ -165,7 +202,7 @@
                     id: value.id,
                 },
                 success: function() {
-                    $(value).parent().parent().remove();
+                    window.location.reload();
                 }
             });
         }

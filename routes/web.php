@@ -49,4 +49,6 @@ Route::post("/role/store", [RoleController::class, "store"])->middleware("role:A
 
 Route::delete("/role/{role}", [RoleController::class, "destroy"])->middleware("role:Admin");
 
+Route::post("/role/update", [RoleController::class, "update"])->middleware("role:Admin");
+
 Route::get("/logout", [LoginController::class, "logout"])->name("logout")->middleware("auth");
