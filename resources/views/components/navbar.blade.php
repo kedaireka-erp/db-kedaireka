@@ -10,6 +10,7 @@
         </div>
     </div>
     <div class="header-right">
+    @role("Admin")
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-5">
             <li class="nav-item d-flex align-items-center h-100">
                 <a class="nav-link @if ($slot == 'Users') text-primary disabled @endif"
@@ -28,6 +29,7 @@
                     href="/permissions">Permissions</a>
             </li>
         </ul>
+        @endrole
         <div class="user-info-dropdown">
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
