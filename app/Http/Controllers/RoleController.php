@@ -13,13 +13,28 @@ class RoleController extends Controller
     {
         return view("roles.index", [
             "permissions" => Permission::all(),
-            "roles" => Role::all()
+            "roles" => Role::with("permissions")->get()
         ]);
     }
 
     public function store(Request $request)
     {
         $role = Role::create([
+            "name" => $request->nama
+        ]);
+
+        $role->syncPermissions($request->permissions);
+
+        return response()->json([
+            "role" => $role
+        ], 200);
+    }
+
+    public function update(Request $request)
+    {
+        $role = Role::find($request->id);
+
+        $role->update([
             "name" => $request->nama
         ]);
 

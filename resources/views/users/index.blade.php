@@ -206,9 +206,7 @@
                     role: $("#role").val()
                 },
                 success: function() {
-                    document.getElementById("create_user").reset();
-                    $("#bd-example-modal-lg").modal("hide");
-                    window.alert("Berhasil Menambahkan User");
+                    window.location.reload();
                 },
                 error: function(data) {
                     const errors = data.responseJSON.errors;
