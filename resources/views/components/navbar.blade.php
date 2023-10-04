@@ -10,6 +10,13 @@
                     style="height: 50%;" alt="" />
             </a>
         </div>
+        @if (Request::getHost() == 'erp.kalinggakelingjati.site')
+            <div class="login-menu">
+                <ul>
+                    <li><a href="/">Kalingga Keling Jati</a></li>
+                </ul>
+            </div>
+        @endif
     </div>
     <div class="header-right">
         @role('Admin')

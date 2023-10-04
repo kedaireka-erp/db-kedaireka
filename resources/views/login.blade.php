@@ -7,7 +7,7 @@
 
 <body class="login-page">
     <div class="login-header box-shadow">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="container-fluid d-flex align-items-center">
             <div class="brand-logo">
                 <a href="/">
                     <img src=@if (Request::getHost() == 'erp.kalinggakelingjati.site') "/img/image 6 big.png"
@@ -16,6 +16,13 @@
                         style="height: 50%;" alt="" />
                 </a>
             </div>
+            @if (Request::getHost() == 'erp.kalinggakelingjati.site')
+                <div class="login-menu">
+                    <ul>
+                        <li><a href="/">Kalingga Keling Jati</a></li>
+                    </ul>
+                </div>
+            @endif
         </div>
     </div>
     <div class="login-wrap d-flex align-items-lg-center flex-wrap justify-content-center">
