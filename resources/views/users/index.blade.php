@@ -1,3 +1,5 @@
+{{-- @dd($users[0]->getRoleNames()[0]) --}}
+
 @extends('layouts.admin')
 
 @push('style')
@@ -144,7 +146,7 @@
                                                 <select name="role" class="custom-select" id="{{ $user->id }}">
                                                     @foreach ($roles as $role)
                                                         <option value="{{ $role->name }}"
-                                                            {{ $user->roles[0]->id == $role->id ? 'selected' : '' }}>
+                                                            {{ $user->getRoleNames()[0] == $role->name ? 'selected' : '' }}>
                                                             {{ $role->name }}</option>
                                                     @endforeach
                                                 </select>

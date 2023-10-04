@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
 
         // \App\Models\User::create([
         //     'name' => 'Test User',
@@ -62,5 +62,10 @@ class DatabaseSeeder extends Seeder
         $role3 = Role::create(['name' => 'QC']);
 
         $role3->givePermissionTo($permission5);
+
+        $users = User::get();
+        foreach ($users as $user) {
+            $user->assignRole('Admin');
+        }
     }
 }

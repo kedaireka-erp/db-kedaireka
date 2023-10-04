@@ -4,31 +4,33 @@
         <div class="search-toggle-icon bi bi-search"></div> --}}
         <div class="brand-logo">
             <a href="/">
-                <img src="https://allureindustries.com/files/uploads/2016/03/600.png" style="height: 50%;"
-                    alt="" />
+                <img src=@if (Request::getHost() == 'kalinggakelingjati.site') "/img/image 6 big.png"
+                @else
+                    "https://allureindustries.com/files/uploads/2016/03/600.png" @endif
+                    style="height: 50%;" alt="" />
             </a>
         </div>
     </div>
     <div class="header-right">
-    @role("Admin")
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-5">
-            <li class="nav-item d-flex align-items-center h-100">
-                <a class="nav-link @if ($slot == 'Users') text-primary disabled @endif"
-                    href="/users">Users</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-5">
-            <li class="nav-item d-flex align-items-center h-100">
-                <a class="nav-link @if ($slot == 'Roles') text-primary disabled @endif"
-                    href="/roles">Roles</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-5">
-            <li class="nav-item d-flex align-items-center h-100">
-                <a class="nav-link @if ($slot == 'Permissions') text-primary disabled @endif"
-                    href="/permissions">Permissions</a>
-            </li>
-        </ul>
+        @role('Admin')
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-5">
+                <li class="nav-item d-flex align-items-center h-100">
+                    <a class="nav-link @if ($slot == 'Users') text-primary disabled @endif"
+                        href="/users">Users</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-5">
+                <li class="nav-item d-flex align-items-center h-100">
+                    <a class="nav-link @if ($slot == 'Roles') text-primary disabled @endif"
+                        href="/roles">Roles</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-5">
+                <li class="nav-item d-flex align-items-center h-100">
+                    <a class="nav-link @if ($slot == 'Permissions') text-primary disabled @endif"
+                        href="/permissions">Permissions</a>
+                </li>
+            </ul>
         @endrole
         <div class="user-info-dropdown">
             <div class="dropdown">
