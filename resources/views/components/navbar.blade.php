@@ -4,7 +4,7 @@
         <div class="search-toggle-icon bi bi-search"></div> --}}
         <div class="brand-logo">
             <a href="/">
-                <img src=@if (Request::getHost() == 'kalinggakelingjati.site') "/img/image 6 big.png"
+                <img src=@if (Request::getHost() == 'erp.kalinggakelingjati.site') "/img/image 6 big.png"
                 @else
                     "https://allureindustries.com/files/uploads/2016/03/600.png" @endif
                     style="height: 50%;" alt="" />

@@ -1,11 +1,11 @@
 <div class="left-side-bar sidebar-light">
     <div class="brand-logo">
         <a href="/">
-            <img src=@if (Request::getHost() == 'kalinggakelingjati.site') "/img/image 6 big.png"
+            <img src=@if (Request::getHost() == 'erp.kalinggakelingjati.site') "/img/image 6 big.png"
             @else
                 "https://allureindustries.com/files/uploads/2016/03/600.png" @endif
                 alt="" class="dark-logo" />
-            <img src=@if (Request::getHost() == 'kalinggakelingjati.site') "/img/image 6 big.png"
+            <img src=@if (Request::getHost() == 'erp.kalinggakelingjati.site') "/img/image 6 big.png"
             @else
                 "https://allureindustries.com/files/uploads/2016/03/600.png" @endif
                 alt="" class="light-logo" />
