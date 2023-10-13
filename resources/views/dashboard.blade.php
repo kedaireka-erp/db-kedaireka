@@ -146,7 +146,7 @@
                                 </button>
                             </form>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
+                        {{-- <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                             <a href="http://www.kalinggakelingjati.site/"
                                 class="btn card-box height-100-p widget-style3 w-100">
                                 <div class="d-flex flex-wrap">
@@ -163,7 +163,7 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
